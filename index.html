@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
     <title>local Weather</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
     <link href="css/owfont-regular.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -13,7 +15,23 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2" id="action-box">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p id="location"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <p id="condition"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <button id="temp"></button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>

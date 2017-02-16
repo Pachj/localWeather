@@ -1,0 +1,27 @@
+body {
+    font-family: 'Inconsolata', monospace;
+    color: white;
+    font-size: 10px;
+}
+
+
+#action-box {
+    background-color: #09b2cb;
+    border-radius: 30px;
+    padding: 2em;
+    padding-bottom: 1em;
+    margin-top: 8.33333333%;
+}
+
+button {
+    background: none;
+    border-style: none;
+    outline: none;
+    font-size: 2.5em;
+}
+
+button:hover {
+    color: black;
+}
+
+
