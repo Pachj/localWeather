@@ -4,10 +4,10 @@
 getLocation();
 
 function getLocation() {
-    $.getJSON("http://freegeoip.net/json/", function (location) {
+    $.getJSON("http://ip-api.com/json/?fields=country,city,lat,lon", function (location) {
 
-        var latitude = location.latitude;
-        var longitude = location.longitude;
+        var latitude = location.lat;
+        var longitude = location.lon;
 
         getWeather(latitude, longitude);
     });
