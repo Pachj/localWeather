@@ -1,8 +1,11 @@
 /**
  * Created by Henry on 15.02.17.
  */
-var unit = "celsius";
+var tempUnit = "celsius";
 var temp = 0;
+
+var windUnit = "kph";
+var wind = 0;
 
 $(document).ready(function () {
     getLocation();
@@ -25,8 +28,12 @@ $(document).ready(function () {
             console.log(data);
 
             displayWeather(data.name, data.sys.country, data.weather[0]);
+
             displayTemp(data.main.temp, "celsius");
             temp = data.main.temp;
+
+            displayWind(data.wind.speed, "kph");
+            wind = data.wind.speed;
         });
     }
 
@@ -50,16 +57,37 @@ $(document).ready(function () {
         }
     }
 
+    function displayWind(wind, desiredUnit) {
+        if (desiredUnit === "kph") {
+            var kph = Math.round(wind * 1.609344);
+            $("#wind").html(kph + " KpH");
+        }
+        else if (desiredUnit === "mph") {
+            $("#wind").html(wind + " MpH");
+        }
+    }
+
     $("#temp").click(function () {
-        if (unit === "celsius") {
-            unit = "fahrenheit";
+        if (tempUnit === "celsius") {
+            tempUnit = "fahrenheit";
         }
 
-        else if (unit === "fahrenheit") {
-            unit = "celsius";
+        else if (tempUnit === "fahrenheit") {
+            tempUnit = "celsius";
         }
 
-        displayTemp(temp, unit);
+        displayTemp(temp, tempUnit);
+    });
+
+    $("#wind").click(function () {
+        if (windUnit === "kph") {
+            windUnit = "mph";
+        }
+        else if (windUnit === "mph") {
+            windUnit = "kph";
+        }
+
+        displayWind(wind, windUnit);
     });
 
 });

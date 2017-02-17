@@ -4,7 +4,6 @@ body {
     font-size: 10px;
 }
 
-
 #action-box {
     background-color: #09b2cb;
     border-radius: 30px;
@@ -13,19 +12,29 @@ body {
     margin-top: 8.33333333%;
 }
 
+#location {
+    font-size: 2em;
+}
+
 p {
-    font-size: 2.5em;
+    font-size: 5em;
+    display: inline;
 }
 
 #icon {
-    font-size: 2.5em;
+    font-size: 5em;
+}
+
+#data {
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 button {
     background: none;
     border-style: none;
     outline: none;
-    font-size: 2.5em;
+    font-size: 2em;
 }
 
 button:hover {
