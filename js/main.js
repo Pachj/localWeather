@@ -22,6 +22,8 @@ $(document).ready(function () {
         $.getJSON("http://api.openweathermap.org/data/2.5/weather?lat=" + latitude + "&lon=" + longitude
             + "&appid=42d4c944c359e9102a517de5e8b362f7", function (data) {
 
+            console.log(data);
+
             displayWeather(data.name, data.sys.country, data.weather[0]);
             displayTemp(data.main.temp, "celsius");
             temp = data.main.temp;
@@ -31,6 +33,9 @@ $(document).ready(function () {
     function displayWeather(city, country, weather) {
         $("#location").html(city + ", " + country);
         $("#condition").html(weather.main);
+
+        var weatherId = "owf-" + weather.id;
+        $("#icon").addClass(weatherId);
     }
 
     function displayTemp(temp, desiredUnit) {
